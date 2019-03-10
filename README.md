@@ -1,4 +1,4 @@
-# Project Title
+# Flask-Vue Plotly Examples
 
 Flask Plotly Examples
 
