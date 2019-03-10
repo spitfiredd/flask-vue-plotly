@@ -1,5 +1,3 @@
-import json
-
 import numpy as np
 from flask import Blueprint, jsonify
 from flask_restplus import Resource, Api, reqparse
@@ -23,7 +21,16 @@ class HelloFlaskPlotyVue(Resource):
 
         x = np.linspace(0, stop, num=num)
         y = np.sin(x)
-        return jsonify({'x': x.tolist(), 'y': y.tolist()})
+        return jsonify(
+            [
+                {
+                    'x': x.tolist(),
+                    'y': y.tolist(),
+                    'mode': 'markers',
+                    'marker': {'size': 12}
+                }
+            ]
+        )
 
 
 api_v1.add_resource(HelloFlaskPlotyVue, '/sin')

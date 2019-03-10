@@ -15,7 +15,7 @@ def create_app(config='backend.settings'):
 
 def register_blueprints(app):
     """ Register Blueprints. """
-    from .api.hello_world_plot import api_bp, API_VERSION_V1
+    from .api.hello_plotly import api_bp, API_VERSION_V1
 
     app.register_blueprint(
         api_bp,

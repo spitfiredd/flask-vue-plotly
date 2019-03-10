@@ -4,25 +4,32 @@
 
 
 <script>
-import VuePlotly from '@statnett/vue-plotly'
+import VuePlotly from '@statnett/vue-plotly';
+import axios from "axios";
+
 
 export default {
   components: {
     VuePlotly
   },
-  data: function () {
+  data() {
     return {
-      data: [{
-        x: [1, 2, 3, 4],
-        y: [10, 11, 12, 13],
-        mode: 'markers',
-        marker: {
-          size: [40, 60, 80, 100]
-        }
-      }],
-      layout: {title: 'Marker Size', showlegend: false, height: 600, width: 1200},
+      data: null,
+      layout: {title: "Hello Plotly!"},
       options: {}
     }
+  },
+  mounted() {
+    axios
+      .get('http://127.0.0.1:5000/api/v1/sin')
+      .then(response => {
+        this.data = response.data
+      })
+      .catch(error => {
+        console.log(error)
+        this.errored = true
+      })
+      .finally(() => this.loading = false)
   }
 }
 </script>
