@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import HelloPlotly from "./components/HelloPlotly.vue";
 
 export default {
