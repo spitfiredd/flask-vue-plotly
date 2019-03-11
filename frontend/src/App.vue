@@ -1,16 +1,17 @@
 <template>
   <div id="app">
-    <HelloPlotly />
+    <app-header></app-header>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloPlotly from "./components/HelloPlotly.vue";
+import AppHeader from "@/components/Header.vue";
 
 export default {
   name: "app",
   components: {
-    HelloPlotly
+    AppHeader
   }
 };
 </script>
