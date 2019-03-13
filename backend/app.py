@@ -15,10 +15,21 @@ def create_app(config='backend.settings'):
 
 def register_blueprints(app):
     """ Register Blueprints. """
-    from .api.hello_plotly import api_bp, API_VERSION_V1
+    from .api.hello_plotly import api_bp
+    from .api.movingaverage import mva_bp
+
+    API_VERSION_V1 = 1
 
     app.register_blueprint(
         api_bp,
+        url_prefix='{prefix}/v{version}'.format(
+            prefix=app.config['URL_PREFIX'],
+            version=API_VERSION_V1
+        )
+    )
+
+    app.register_blueprint(
+        mva_bp,
         url_prefix='{prefix}/v{version}'.format(
             prefix=app.config['URL_PREFIX'],
             version=API_VERSION_V1

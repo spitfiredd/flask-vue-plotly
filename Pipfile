@@ -7,6 +7,7 @@ verify_ssl = true
 flake8 = "*"
 pylint = "*"
 pytest = "*"
+ipython = "*"
 
 [packages]
 flask = "*"
@@ -16,6 +17,7 @@ environs = "*"
 requests = "*"
 numpy = "*"
 scipy = "*"
+statsmodels = "*"
 
 [requires]
 python_version = "3.7"

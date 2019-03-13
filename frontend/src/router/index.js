@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import HelloPlotly from "@/components/HelloPlotly.vue";
+import MvaPlot from "@/components/MvaPlotly.vue";
 import Home from "@/components/Home.vue";
 
 Vue.use(Router);
@@ -16,6 +17,12 @@ export default new Router({
       path: "/plot",
       name: "HelloPlotly",
       component: HelloPlotly
+    }
+    ,
+    {
+      path: "/mva",
+      name: "MvaPlotly",
+      component: MvaPlot
     }
   ]
 });

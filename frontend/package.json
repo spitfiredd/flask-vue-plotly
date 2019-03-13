@@ -10,6 +10,7 @@
   "dependencies": {
     "@statnett/vue-plotly": "^0.2.0",
     "axios": "^0.18.0",
+    "buefy": "^0.7.3",
     "plotly.js": "^1.45.2",
     "semantic-ui-vue": "^0.8.1",
     "vue": "^2.6.6",
