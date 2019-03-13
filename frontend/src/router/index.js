@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import HelloPlotly from "@/components/HelloPlotly.vue";
-import MvaPlot from "@/components/MvaPlotly.vue";
+import AutoCorr from "@/components/AutoCorr.vue";
 import Home from "@/components/Home.vue";
 
 Vue.use(Router);
@@ -20,9 +20,9 @@ export default new Router({
     }
     ,
     {
-      path: "/mva",
-      name: "MvaPlotly",
-      component: MvaPlot
+      path: "/autocorr",
+      name: "AutoCorr",
+      component: AutoCorr
     }
   ]
 });

@@ -40,8 +40,8 @@ class MovingAverage(Resource):
             {
                 'x': np.arange(len(autocorr_factors)).tolist(),
                 'y': autocorr_factors.tolist(),
-                'mode': 'lines+markers',
-                'marker': {'size': 3}
+                'type': 'bar',
+                'width': 0.1
             }
         ]
         return jsonify({'mva': mva, 'autocorr': autocorr})

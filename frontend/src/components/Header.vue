@@ -15,8 +15,8 @@
             <router-link to="/plot" class="navbar-item">
               Hello Plot
             </router-link>
-            <router-link to="/mva" class="navbar-item">
-              MVA
+            <router-link to="/autocorr" class="navbar-item">
+              ACF
             </router-link>
           </div>
         </div>
