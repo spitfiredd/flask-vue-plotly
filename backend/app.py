@@ -17,6 +17,7 @@ def register_blueprints(app):
     """ Register Blueprints. """
     from .api.hello_plotly import api_bp
     from .api.movingaverage import mva_bp
+    from .api.montecarlo import monte_bp
 
     API_VERSION_V1 = 1
 
@@ -30,6 +31,14 @@ def register_blueprints(app):
 
     app.register_blueprint(
         mva_bp,
+        url_prefix='{prefix}/v{version}'.format(
+            prefix=app.config['URL_PREFIX'],
+            version=API_VERSION_V1
+        )
+    )
+
+    app.register_blueprint(
+        monte_bp,
         url_prefix='{prefix}/v{version}'.format(
             prefix=app.config['URL_PREFIX'],
             version=API_VERSION_V1

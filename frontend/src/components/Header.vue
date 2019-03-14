@@ -18,6 +18,9 @@
             <router-link to="/autocorr" class="navbar-item">
               ACF
             </router-link>
+            <router-link to="/monte" class="navbar-item">
+              Monte Carlo
+            </router-link>
           </div>
         </div>
       </div>
