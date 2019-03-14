@@ -26,25 +26,33 @@ class MovingAverage(Resource):
         X[0] = Z[0]
         for i in range(1, 1000):
             X[i] = Z[i] + phi * X[i - 1]
-        mva = [
-            {
-                'x': np.arange(1000).tolist(),
-                'y': X.tolist(),
-                'mode': 'lines+markers',
-                'marker': {'size': 3}
-            }
-
-        ]
+        mva = {
+            'x': np.arange(1000).tolist(),
+            'y': X.tolist(),
+            'mode': 'lines+markers',
+            'marker': {'size': 3}
+        }
         autocorr_factors = acf(X)
-        autocorr = [
-            {
-                'x': np.arange(len(autocorr_factors)).tolist(),
-                'y': autocorr_factors.tolist(),
-                'type': 'bar',
-                'width': 0.1
+        autocorr = {
+            'x': np.arange(len(autocorr_factors)).tolist(),
+            'y': autocorr_factors.tolist(),
+            'type': 'bar',
+            'width': 0.1,
+            'xaxis': 'x2',
+            'yaxis': 'y2',
+        }
+        data = [mva, autocorr]
+        layout = {
+            'title': f"AR(1) Time Series on white noise, phi={phi}",
+            'showlegend': False,
+            'grid': {
+                'rows': 2,
+                'columns': 1,
+                'pattern': 'independent',
+                'roworder': 'top to bottom'
             }
-        ]
-        return jsonify({'mva': mva, 'autocorr': autocorr})
+        }
+        return jsonify({'data': data, 'layout': layout})
 
 
 mva_v1.add_resource(MovingAverage, '/mva')
